@@ -4,7 +4,6 @@
 Nolan is a library that converts __swift 2__ values into JSON format. It can convert any type (except functions and tuples) to JSON object. It uses protocol extensions, error handling that is only available in swift version 2.
 
 ###Requirements
-* iOS 9.0
 * Swift 2
 * Xcode 7
 
