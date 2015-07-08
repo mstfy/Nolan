@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NolaniOSExample/NolaniOSExample.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Nolan/Nolan.xcodeproj">
    </FileRef>
 </Workspace>
