@@ -10,7 +10,7 @@ Nolan is a library that converts __swift 2__ values into JSON format. It can con
 
 ###Installation
 
-Nolan supports [Carthage](https://github.com/Carthage/Carthage).  Add `github ""` line into your Cartfile and run `carthage install` command on terminal.
+Nolan supports [Carthage](https://github.com/Carthage/Carthage).  Add `github "mstfy/Nolan"` line into your Cartfile and run `carthage install` command on terminal.
 
 ###How to use
 By default Nolan can convert `String`, `NSDate`, `Float`, `Double`, `Int`, `NSURL` and `Optional` types to json. To adopt it for your custom type just conform your type to `JSONConvertible` protocol and it is done (hopefully). Here is an example type:
