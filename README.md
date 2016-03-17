@@ -13,14 +13,15 @@ Nolan supports [Carthage](https://github.com/Carthage/Carthage).  Add `github "m
 
 ###How to use
 By default Nolan can convert `String`, `NSDate`, `Float`, `Double`, `Int`, `NSURL` and `Optional` types to json. To adopt it for your custom type just conform your type to `JSONConvertible` protocol and it is done (hopefully). Here is an example type:
-
+````swift
     struct User: JSONConvertible {
         let name: String
         let age: Int
     }
+````
 
 Now to convert it to JSON just call `toJSON()` method that is declared in `JSONConvertible` protocol.
-
+````swift
     let user = User(name: "Nolan", age: 25)
     try {
         let userJSON = try user.toJSON()
@@ -28,9 +29,11 @@ Now to convert it to JSON just call `toJSON()` method that is declared in `JSONC
     } catch let JSONConversionError.TypeIsNotConvertibleToJSON(type) {
         print("Error: \(type) is not convertible to JSON")
     }
+````
 
 Here is more complicated example:
 
+````swift
     struct User: JSONConvertible {
         let name: String
         let books: [Book]
@@ -53,9 +56,11 @@ Here is more complicated example:
     } catch let error as NSError {
         print("unknown error \(error.localizedDescription)")
     }
+````
 
 It prints:
 
+````swift
     user json is {
         books =     (
                     {
@@ -71,9 +76,11 @@ It prints:
         );
         name = Cooper;
     }
+````
 
 By default `toJSON` method produces key value pairs of the value using reflection api in Swift. But you can override this behavior in your custom type. For example: 
 
+````swift
     struct User: JSONConvertible {
     	let name: String
     	let role: Role
@@ -100,10 +107,13 @@ By default `toJSON` method produces key value pairs of the value using reflectio
     } catch let error as NSError {
         print("unknown error \(error.localizedDescription)")
     }
+````
 
 It prints:
 
+````swift
     user json = {
         name = Cooper;
         role = captain;
     }
+````
